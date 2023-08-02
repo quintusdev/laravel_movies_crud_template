@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    {{-- Form di inserimento di un nuovo Film --}}
     <div class="container">
         <div class="row">
             <div class="col-12">
