@@ -6,6 +6,8 @@ use App\Models\Movies;
 use App\Http\Requests\StoreMoviesRequest;
 use App\Http\Requests\UpdateMoviesRequest;
 
+
+use Illuminate\Http\Request;
 class MoviesController extends Controller
 {
     /**
@@ -16,7 +18,7 @@ class MoviesController extends Controller
     public function index()
     {
         $movies = Movie::all();
-       return view('movie.index', compact ('movie'));
+        return view('movie.index', compact ('movie'));
     }
 
     /**
