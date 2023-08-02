@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movies;
+use App\Models\Movie;
 use App\Http\Requests\StoreMoviesRequest;
 use App\Http\Requests\UpdateMoviesRequest;
 
@@ -37,7 +37,20 @@ class MoviesController extends Controller
      */
     public function store(StoreMoviesRequest $request)
     {
-        //
+        $form_data = $this->validation($request->all());
+
+        $movie = new Movie();
+
+        $movie->title = $form_data['title'];
+        $movie->image = $form_data['image'];
+        $movie->description = $form_data['description'];
+        $movie->director = $form_data['director'];
+        $movie->votes = $form_data['votes'];
+        $movie->exit_date = $form_data['exit_date'];
+
+        $movie->save();
+
+        return redirect()->route('movies.index', $movie->id);
     }
 
     /**
@@ -59,7 +72,7 @@ class MoviesController extends Controller
      */
     public function edit(Movies $movies)
     {
-        //
+        return view('movies.edit', compact('comic'));
     }
 
     /**
