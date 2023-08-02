@@ -6,8 +6,6 @@ use App\Models\Movie;
 use App\Http\Requests\StoreMoviesRequest;
 use App\Http\Requests\UpdateMoviesRequest;
 
-
-use Illuminate\Http\Request;
 class MoviesController extends Controller
 {
     /**
@@ -18,7 +16,7 @@ class MoviesController extends Controller
     public function index()
     {
         $movies = Movie::all();
-        return view('movie.index', compact ('movie'));
+        return view('movie.index', compact('movie'));
     }
 
     /**
@@ -61,9 +59,9 @@ class MoviesController extends Controller
      * @param  \App\Models\Movies  $movies
      * @return \Illuminate\Http\Response
      */
-    public function show(Movies $movies)
+    public function show(Movie $movies)
     {
-        return view('movies.show', compact('movie'));
+        //
     }
 
     /**
@@ -72,7 +70,7 @@ class MoviesController extends Controller
      * @param  \App\Models\Movies  $movies
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movies $movies)
+    public function edit(Movie $movies)
     {
         return view('movies.edit', compact('comic'));
     }
@@ -84,7 +82,7 @@ class MoviesController extends Controller
      * @param  \App\Models\Movies  $movies
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMoviesRequest $request, Movies $movies)
+    public function update(UpdateMoviesRequest $request, Movie $movies)
     {
         //
     }
@@ -95,7 +93,7 @@ class MoviesController extends Controller
      * @param  \App\Models\Movies  $movies
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movies $movies)
+    public function destroy(Movie $movies)
     {
         //
     }
