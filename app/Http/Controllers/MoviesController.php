@@ -15,7 +15,7 @@ class MoviesController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
